@@ -14,7 +14,7 @@ function Media({ item, onClick, className }) {
         />
       ) : (
         <video
-          className="w-26 h-20 object-cover rounded-md"
+          className="w-42 h-40 object-cover rounded-md"
           src={item.src}
           muted
           loop

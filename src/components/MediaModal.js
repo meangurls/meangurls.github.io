@@ -1,11 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { saveAs } from 'file-saver';
 
 Modal.setAppElement('#root');
 
 function MediaModal({ media, closeModal }) {
   return (
-    // TODO: add a "download" button
     <Modal
       isOpen
       onRequestClose={closeModal}
@@ -14,15 +14,24 @@ function MediaModal({ media, closeModal }) {
     >
       <button
         onClick={closeModal}
-        className="absolute top-4 right-4 bg-deepPink text-white rounded-full px-3 py-1 text-sm"
+        className="absolute top-4 right-4 px-3 py-1 bg-deepPink text-white rounded-full text-base"
       >
-        Close
+      Close
       </button>
+
+      <button
+        onClick={() => saveAs(media.src, media.src)}
+        className="absolute top-4 left-4 px-3 py-1 bg-deepPink text-white rounded-full text-base"
+      >
+      Download
+      </button>
+
       {media.type === 'image' ? (
         <img src={media.src} alt={media.alt} className="rounded-md max-w-full max-h-full" />
       ) : (
         <video src={media.src} controls className="rounded-md max-w-full max-h-full" />
       )}
+
     </Modal>
   );
 }
