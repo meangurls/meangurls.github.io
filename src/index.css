@@ -3,13 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* index.css */
-@keyframes scroll {
+/* Infinite scrolling animations */
+@keyframes scroll-left {
   from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  to { transform: translateX(-50%); }
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear forwards infinite; /* Adjust duration as needed */
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear forwards infinite; /* Adjust duration as needed */
 }

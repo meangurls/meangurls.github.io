@@ -5,6 +5,7 @@ Modal.setAppElement('#root');
 
 function MediaModal({ media, closeModal }) {
   return (
+    // TODO: add a "download" button
     <Modal
       isOpen
       onRequestClose={closeModal}
