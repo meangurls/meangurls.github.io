@@ -17,7 +17,7 @@ const mediaItems = [
 ];
 
 const getRowMedia = (rowIndex, items) => {
-  const offset = rowIndex % items.length;
+  const offset = ((rowIndex * 3) % (items.length));
   return [...items.slice(offset), ...items.slice(0, offset)];
 };
 
