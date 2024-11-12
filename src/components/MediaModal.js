@@ -14,23 +14,19 @@ function MediaModal({ media, closeModal }) {
     >
       <button
         onClick={closeModal}
-        className="absolute top-4 right-4 px-3 py-1 bg-deepPink text-white rounded-full text-base"
+        className="absolute top-4 left-4 px-4 py-2 bg-deepPink text-white rounded-full text-base"
       >
       Close
       </button>
 
       <button
         onClick={() => saveAs(media.src, media.src)}
-        className="absolute top-4 left-4 px-3 py-1 bg-deepPink text-white rounded-full text-base"
+        className="absolute top-4 right-4 px-4 py-2 bg-deepPink text-white rounded-full text-base"
       >
       Download
       </button>
 
-      {media.type === 'image' ? (
-        <img src={media.src} alt={media.alt} className="rounded-md max-w-full max-h-full" />
-      ) : (
-        <video src={media.src} controls className="rounded-md max-w-full max-h-full" />
-      )}
+      <img src={media.src} alt={media.alt} className="rounded-md max-w-full max-h-full" />
 
     </Modal>
   );

@@ -11,12 +11,11 @@ function Media({ item, onClick, className }) {
       <LazyLoadImage
         effect="blur"
         wrapperProps={{
-          // If you need to, you can tweak the effect transition using the wrapper style.
-          style: {transitionDelay: "10s"},
+          style: {transitionDelay: "2s"},
         }}
         alt={item.alt}
         className="w-42 h-40 object-cover rounded-md"
-        src={item.src}
+        src={item.minsrc}
       />
     </div>
   );
