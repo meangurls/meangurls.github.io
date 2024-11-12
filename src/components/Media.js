@@ -12,7 +12,7 @@ function Media({ item, onClick, className }) {
         effect="blur"
         wrapperProps={{
           // If you need to, you can tweak the effect transition using the wrapper style.
-          style: {transitionDelay: "8s"},
+          style: {transitionDelay: "10s"},
         }}
         alt={item.alt}
         className="w-42 h-40 object-cover rounded-md"
