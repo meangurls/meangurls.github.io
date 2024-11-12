@@ -15,9 +15,9 @@
 }
 
 .animate-scroll-left {
-  animation: scroll-left 160s linear forwards infinite; /* Adjust duration as needed */
+  animation: scroll-left 110s linear forwards infinite; /* Adjust duration as needed */
 }
 
 .animate-scroll-right {
-  animation: scroll-right 160s linear forwards infinite; /* Adjust duration as needed */
+  animation: scroll-right 110s linear forwards infinite; /* Adjust duration as needed */
 }

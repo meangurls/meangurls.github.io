@@ -66,7 +66,8 @@ const mediaItems = [
 ];
 
 const getRowMedia = (rowIndex, items) => {
-  let rowItems = rowIndex % 2 === 0 ? items.slice(0, items.length / 2) : items.slice(items.length/2, items.length);
+  //let rowItems = rowIndex % 2 === 0 ? items.slice(0, items.length / 2) : items.slice(items.length/2, items.length);
+  const rowItems = items
   const offset = ((rowIndex * 7) % (rowItems.length));
   return [...rowItems.slice(offset), ...rowItems.slice(0, offset)];
 };
@@ -83,7 +84,7 @@ function Gallery() {
   useEffect(() => {
     const updateNumRows = () => {
       const rowHeight = 180;
-      const calculatedRows = Math.floor(window.innerHeight / rowHeight);
+      const calculatedRows = Math.floor(window.innerHeight / rowHeight) - 1;
       setNumRows(calculatedRows);
       console.log(calculatedRows)
     };
