@@ -63,13 +63,12 @@ const mediaItems = [
   { type: 'image', src: '/media/57.jpg', alt: 'Photo 57' },
   { type: 'image', src: '/media/58.jpg', alt: 'Photo 58' },
   { type: 'image', src: '/media/59.jpg', alt: 'Photo 59' },
-    // { type: 'video', src: '/media/video1.mp4', alt: 'Video 1' },
 ];
 
-
 const getRowMedia = (rowIndex, items) => {
-  const offset = ((rowIndex * 7) % (items.length));
-  return [...items.slice(offset), ...items.slice(0, offset)];
+  let rowItems = rowIndex % 2 === 0 ? items.slice(0, items.length / 2) : items.slice(items.length/2, items.length);
+  const offset = ((rowIndex * 7) % (rowItems.length));
+  return [...rowItems.slice(offset), ...rowItems.slice(0, offset)];
 };
 
 function Gallery() {
@@ -83,9 +82,10 @@ function Gallery() {
 
   useEffect(() => {
     const updateNumRows = () => {
-      const rowHeight = 50;
-      const calculatedRows = Math.floor(window.innerHeight / rowHeight) - 1;
+      const rowHeight = 180;
+      const calculatedRows = Math.floor(window.innerHeight / rowHeight);
       setNumRows(calculatedRows);
+      console.log(calculatedRows)
     };
 
     updateNumRows();
