@@ -1,6 +1,6 @@
 {
   "name": "mean-girls-gallery",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -9,14 +9,14 @@
     "file-saver": "^2.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-lazy-load-image-component": "^1.6.2",
     "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --cname mg.cserevue.org.au",
+    "gh-help": "gh-pages --help",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
