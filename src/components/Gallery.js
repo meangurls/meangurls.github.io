@@ -84,7 +84,7 @@ function Gallery() {
   useEffect(() => {
     const updateNumRows = () => {
       const rowHeight = 180;
-      const calculatedRows = Math.floor(window.innerHeight / rowHeight) - 1;
+      const calculatedRows = Math.floor(window.innerHeight / rowHeight);
       setNumRows(calculatedRows);
       console.log(calculatedRows)
     };
