@@ -33,42 +33,12 @@ const mediaItems = [
   { src: '/media/27.jpg', minsrc: '/minimedia/27.webp', alt: 'Photo 27' },
   { src: '/media/28.jpg', minsrc: '/minimedia/28.webp', alt: 'Photo 28' },
   { src: '/media/29.jpg', minsrc: '/minimedia/29.webp', alt: 'Photo 29' },
-  { src: '/media/30.jpg', minsrc: '/minimedia/30.webp', alt: 'Photo 30' },
-  { src: '/media/31.jpg', minsrc: '/minimedia/31.webp', alt: 'Photo 31' },
-  { src: '/media/32.jpg', minsrc: '/minimedia/32.webp', alt: 'Photo 32' },
-  { src: '/media/33.jpg', minsrc: '/minimedia/33.webp', alt: 'Photo 33' },
-  { src: '/media/34.jpg', minsrc: '/minimedia/34.webp', alt: 'Photo 34' },
-  { src: '/media/35.jpg', minsrc: '/minimedia/35.webp', alt: 'Photo 35' },
-  { src: '/media/36.jpg', minsrc: '/minimedia/36.webp', alt: 'Photo 36' },
-  { src: '/media/37.jpg', minsrc: '/minimedia/37.webp', alt: 'Photo 37' },
-  { src: '/media/38.jpg', minsrc: '/minimedia/38.webp', alt: 'Photo 38' },
-  { src: '/media/39.jpg', minsrc: '/minimedia/39.webp', alt: 'Photo 39' },
-  { src: '/media/40.jpg', minsrc: '/minimedia/40.webp', alt: 'Photo 40' },
-  { src: '/media/41.jpg', minsrc: '/minimedia/41.webp', alt: 'Photo 41' },
-  { src: '/media/42.jpg', minsrc: '/minimedia/42.webp', alt: 'Photo 42' },
-  { src: '/media/43.jpg', minsrc: '/minimedia/43.webp', alt: 'Photo 43' },
-  { src: '/media/44.jpg', minsrc: '/minimedia/44.webp', alt: 'Photo 44' },
-  { src: '/media/45.jpg', minsrc: '/minimedia/45.webp', alt: 'Photo 45' },
-  { src: '/media/46.jpg', minsrc: '/minimedia/46.webp', alt: 'Photo 46' },
-  { src: '/media/47.jpg', minsrc: '/minimedia/47.webp', alt: 'Photo 47' },
-  { src: '/media/48.jpg', minsrc: '/minimedia/48.webp', alt: 'Photo 48' },
-  { src: '/media/49.jpg', minsrc: '/minimedia/49.webp', alt: 'Photo 49' },
-  { src: '/media/50.jpg', minsrc: '/minimedia/50.webp', alt: 'Photo 50' },
-  { src: '/media/51.jpg', minsrc: '/minimedia/51.webp', alt: 'Photo 51' },
-  { src: '/media/52.jpg', minsrc: '/minimedia/52.webp', alt: 'Photo 52' },
-  { src: '/media/53.jpg', minsrc: '/minimedia/53.webp', alt: 'Photo 53' },
-  { src: '/media/54.jpg', minsrc: '/minimedia/54.webp', alt: 'Photo 54' },
-  { src: '/media/55.jpg', minsrc: '/minimedia/55.webp', alt: 'Photo 55' },
-  { src: '/media/56.jpg', minsrc: '/minimedia/56.webp', alt: 'Photo 56' },
-  { src: '/media/57.jpg', minsrc: '/minimedia/57.webp', alt: 'Photo 57' },
-  { src: '/media/58.jpg', minsrc: '/minimedia/58.webp', alt: 'Photo 58' },
-  { src: '/media/59.jpg', minsrc: '/minimedia/59.webp', alt: 'Photo 59' },
 ];
 
 const getRowMedia = (rowIndex, items) => {
-  //let rowItems = rowIndex % 2 === 0 ? items.slice(0, items.length / 2) : items.slice(items.length/2, items.length);
+  //const rowItems = rowIndex % 2 === 0 ? items.slice(0, items.length / 2) : items.slice(items.length/2, items.length);
   const rowItems = items
-  const offset = ((rowIndex * 7) % (rowItems.length));
+  const offset = ((rowIndex * 5) % (rowItems.length));
   return [...rowItems.slice(offset), ...rowItems.slice(0, offset)];
 };
 
@@ -105,7 +75,7 @@ function Gallery() {
   return (
     <div className="w-max fixed flex flex-col space-y-2 bg-pinkish">
       {Array.from({ length: numRows }).map((_, rowIndex) => (
-        <div ref={ref} key={rowIndex} className={`flex flex-wrap animate-scroll-${rowIndex % 2 === 0 ? 'left' : 'right'}`}
+        <div ref={ref} key={rowIndex} className={`flex flex-wrap animate-scroll-${rowIndex % 2 === 0 ? 'right' : 'left'}`}
               style={{
                 height: `${containerHeight}`,
                 animationPlayState: animationState

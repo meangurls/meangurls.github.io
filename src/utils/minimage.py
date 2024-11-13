@@ -8,7 +8,7 @@ output_folder = "../../public/minimedia"
 os.makedirs(output_folder, exist_ok=True)  # Create the output folder if it doesn't exist
 
 # Set the desired quality level (adjust as needed for balance between quality and size)
-quality = 10  # 0-100, with 100 being the highest quality
+quality = 95  # 0-100, with 100 being the highest quality
 
 # Process files from 0.jpg to 59.jpg
 for i in range(60):
@@ -18,6 +18,8 @@ for i in range(60):
     try:
         # Open the image file
         with Image.open(input_path) as img:
+            # Change size to fit gallery
+            img.thumbnail((336, 320))
             # Convert to WebP format with reduced quality
             img.save(output_path, "WEBP", quality=quality)
             print(f"Converted {input_path} to {output_path} with quality {quality}")
